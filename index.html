@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/512/17113/17113805.png" type="image/x-icon">
+    <title>Formulário</title>
+    <style>
+        body {
+            background-color: rgba(120, 39, 145, 0.582);
+            width: 1000px;
+            margin: auto;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            font-size: 40px;
+        }
+        form{
+            width: 80%;
+            max-width: 900px;
+            max-height: 900px;
+            margin: auto;
+            border: solid 1px rgb(68, 66, 66);
+            border-radius: 10px;
+            box-shadow: 5px 4px 4px 6px;
+            padding: 10px;
+            background-color: rgb(198, 117, 252);
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        input[type="reset"] {
+            background-color: #ca0909;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #700d0d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dados do Cliente</h1>
+    <form action="http://localhost:4000/salvar" method="post">
+        <div>
+            <label for="">Nome</label><br>
+            <input type="text" name="nome" id="" required placeholder="seu nome aqui">
+        </div>
+        <div>
+            <label for="">Endereço</label><br>
+            <input type="text" name="endereco" id="" required placeholder="seu endereço aqui">
+        </div>
+        <div>
+            <label for="">Cidade</label><br>
+            <input type="text" name="cidade" id="" required placeholder="sua cidade aqui">
+        </div>
+        <div>
+            <label for="">Celular</label><br>
+            <input type="text" name="celular" id="" required placeholder="seu celular aqui">
+        </div>
+        <div>
+            <label for="">Email</label><br>
+            <input type="text" name="email" id="" required placeholder="seu email aqui"><br>
+        </div>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+        
+    </form>
+</body>
+</html>
+</body>
+</html>
