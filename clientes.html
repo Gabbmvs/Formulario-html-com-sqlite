@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="shortcut icon" href="https://images.icon-icons.com/2483/PNG/512/customer_icon_149954.png" type="image/x-icon">
+    <style>
+        table{
+            width: 90%;  /* Ocupa quase toda a largura da tela */
+            margin: 20px auto; /* Centraliza e adiciona espaço acima e abaixo */
+            border-collapse: collapse; /* Une as bordas das células em uma só */
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        th{
+            background-color: darkgray;
+            color: black;
+        } 
+        tr:nth-child(even){ /* Cor das linhas pares */
+            background-color: coral;
+        }
+        tr:hover {
+    background-color: #257cd8; /* Destaca a linha quando o mouse passa sobre ela */
+        }
+    </style>
+</head>
+<body>
+    
+    <table> <!--Cria tabela-->
+        <thead>
+            <tr> <!--Table row, significa dar uma linha dentro da tabela-->
+            <th>ID</th> <!--Table Header, significa dar uma célula ao cabeçalho-->
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Cidade</th>
+            <th>Celular</th>
+            <th>Email</th>
+            </tr>
+        </thead>
+     
+
+     <tbody id="lista">
+       <!--<tr>
+            <td>1</td>
+            <td>Gabriel Marques</td>
+            <td>Rua xy</td>
+            <td>São Paulo</td>
+            <td>11 99999-9999</td>
+            <td>gabriel@gmail.com</td>
+        </tr> -->
+    </tbody>
+    </table>
+    <script>
+        fetch("http://localhost:4000/clientes")
+
+        .then(resposta => resposta.json())
+    
+        .then(clientes =>{
+            clientes.forEach(cliente => {
+                const linha =`
+                <tr>
+                   <td>${cliente.id}</td>
+                   <td>${cliente.nome}</td>
+                   <td>${cliente.endereco}</td>
+                   <td>${cliente.cidade}</td>
+                   <td>${cliente.celular}</td>
+                   <td>${cliente.email}</td>
+                </tr>`;
+                 document.getElementById("lista").innerHTML += linha;
+        
+              
+            });
+            console.log(clientes);
+        });
+    </script>
+</body>
+</html>

@@ -50,3 +50,14 @@ app.post("/salvar", (req, res) => {
 app.listen(4000, () => {
     console.log("Servidor rodando em http://localhost:4000");
 });
+//Quando alguém for acessar os clientes
+app.get("/clientes", (req, res) =>{
+    //Busca todos os registros da tabela clientes
+    db.all("SELECT * FROM clientes", [], (erro, rows) =>{
+        if (erro){
+            return res.status(500).send("Erro ao buscar clientes");
+        }
+        //Envia os dados encontrados em JSON
+        res.json(rows);
+    });
+});
